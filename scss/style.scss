@@ -36,12 +36,26 @@ h1, h2, h3, h4, h5, h6 {
         margin: 1.2em 0;
     }
     .card {
+        box-sizing: border-box;
         float: left;
         background: $white;
         border: 1px solid $grey1;
         border-radius: 4px 4px 4px 4px;
-        width: 33%;
+        width: 28%;
+        max-width: 310px;
         position: relative;
+        margin-left: 78px;
+        margin-bottom: 30px;
+        margin-top: 30px;
+        &:nth-child(3n){
+            margin-left: 0;
+        }
+        @include for-phone-only{
+            width: 100%;
+            margin-left: 0;
+            margin-bottom: 15px;
+            margin-top: 15px;
+        }
         img {
             width: 100%;
             &.new-label{
@@ -60,10 +74,7 @@ h1, h2, h3, h4, h5, h6 {
         }
     }
     .add-course-wapper {
-        float: left;
         background: transparent;
-        border: 1px solid $grey1;
-        width: 33%;
         border: 4px dashed $grey1;
         padding: 1em;
         img {

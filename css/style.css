@@ -26,12 +26,25 @@ h1, h2, h3, h4, h5, h6 {
   margin: 1.2em 0; }
 
 .courses .card {
+  box-sizing: border-box;
   float: left;
   background: white;
   border: 1px solid #e5e1e2;
   border-radius: 4px 4px 4px 4px;
-  width: 33%;
-  position: relative; }
+  width: 28%;
+  max-width: 310px;
+  position: relative;
+  margin-left: 78px;
+  margin-bottom: 30px;
+  margin-top: 30px; }
+  .courses .card:nth-child(3n) {
+    margin-left: 0; }
+  @media (max-width: 599px) {
+    .courses .card {
+      width: 100%;
+      margin-left: 0;
+      margin-bottom: 15px;
+      margin-top: 15px; } }
   .courses .card img {
     width: 100%; }
     .courses .card img.new-label {
@@ -46,10 +59,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 0.8em 0.8em 0.8em; }
 
 .courses .add-course-wapper {
-  float: left;
   background: transparent;
-  border: 1px solid #e5e1e2;
-  width: 33%;
   border: 4px dashed #e5e1e2;
   padding: 1em; }
   .courses .add-course-wapper img {
