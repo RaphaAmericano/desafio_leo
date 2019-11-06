@@ -1,1 +1,71 @@
+@import 'mixins';
 @import 'cores';
+@import 'sizes';
+//Gerais
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: $cinza2;
+}
+h1, h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
+}
+.container {
+    position: relative;
+    width: 80%; //
+    margin: 0 auto;
+}
+
+//Footer
+footer {
+    
+    h6 {
+        color: $cinza3;
+        margin-top: 0;
+        font-size: $fontSizeBig;
+        &:before{
+            content: '//';
+        }
+    }
+
+    p{
+        color: $cinza3;
+    }
+
+    .footer-wapper {
+        background-color: $branco;
+        padding: $padding2;
+        display: inline-block;
+        section {
+            float: left;
+            
+        }
+    }
+    .footer-infos {
+        width: 50%;
+    }
+    .footer-contact {
+        width: 20%;
+    }
+    .footer-social-media {
+        width: 20%;
+        ul {
+            list-style-type: none;
+            display: inline-block;
+            padding: 0;
+            li {
+                float: left;
+                margin-left: 0.4em;
+                &:first-child{
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+    .footer-copyright {
+        padding: $padding1;
+        
+    }
+}
+
