@@ -11,12 +11,60 @@ h1, h2, h3, h4, h5, h6 {
   width: 80%;
   margin: 0 auto; }
 
+.button {
+  border-radius: 20px;
+  padding: 0.6em 0.2em;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: block;
+  text-decoration: none; }
+  .button :visited {
+    color: inherit; }
+
+.courses hr {
+  margin: 1.2em 0; }
+
+.courses .card {
+  float: left;
+  background: white;
+  border: 1px solid #e5e1e2;
+  border-radius: 4px 4px 4px 4px;
+  width: 33%;
+  position: relative; }
+  .courses .card img {
+    width: 100%; }
+    .courses .card img.new-label {
+      width: 22%;
+      position: absolute;
+      top: 0;
+      right: 0; }
+  .courses .card .button {
+    background: #01a02a;
+    color: white; }
+  .courses .card .card-wapper {
+    padding: 0 0.8em 0.8em 0.8em; }
+
+.courses .add-course-wapper {
+  float: left;
+  background: transparent;
+  border: 1px solid #e5e1e2;
+  width: 33%;
+  border: 4px dashed #e5e1e2;
+  padding: 1em; }
+  .courses .add-course-wapper img {
+    height: 100%;
+    width: 100%; }
+
 footer h6 {
   color: #a7a7a7;
   margin-top: 0;
   font-size: 24px; }
   footer h6:before {
     content: '//'; }
+  @media (max-width: 599px) {
+    footer h6 {
+      margin: 0.5em 0 0.2em 0; } }
 
 footer p {
   color: #a7a7a7; }
@@ -30,12 +78,21 @@ footer .footer-wapper {
 
 footer .footer-infos {
   width: 50%; }
+  @media (max-width: 599px) {
+    footer .footer-infos {
+      width: 100%; } }
 
 footer .footer-contact {
   width: 20%; }
+  @media (max-width: 599px) {
+    footer .footer-contact {
+      width: 100%; } }
 
 footer .footer-social-media {
   width: 20%; }
+  @media (max-width: 599px) {
+    footer .footer-social-media {
+      width: 100%; } }
   footer .footer-social-media ul {
     list-style-type: none;
     display: inline-block;

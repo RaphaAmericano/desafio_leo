@@ -6,7 +6,7 @@
 body {
     padding: 0;
     margin: 0;
-    background-color: $cinza2;
+    background-color: $grey2;
 }
 h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
@@ -16,25 +16,88 @@ h1, h2, h3, h4, h5, h6 {
     width: 80%; //
     margin: 0 auto;
 }
+.button {
+    border-radius: 20px;
+    padding: 0.6em 0.2em;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: block;
+    text-decoration: none;
+    :visited {
+        color: inherit;
+    }
+}
+//Main
+
+//Cursos
+.courses {
+    hr {
+        margin: 1.2em 0;
+    }
+    .card {
+        float: left;
+        background: $white;
+        border: 1px solid $grey1;
+        border-radius: 4px 4px 4px 4px;
+        width: 33%;
+        position: relative;
+        img {
+            width: 100%;
+            &.new-label{
+                width: 22%;
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+        }
+        .button {
+            background: $green1;
+            color: $white;
+        }
+        .card-wapper {
+            padding: 0 0.8em 0.8em 0.8em;
+        }
+    }
+    .add-course-wapper {
+        float: left;
+        background: transparent;
+        border: 1px solid $grey1;
+        width: 33%;
+        border: 4px dashed $grey1;
+        padding: 1em;
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+}
+
+
+
 
 //Footer
 footer {
     
     h6 {
-        color: $cinza3;
+        color: $grey3;
         margin-top: 0;
         font-size: $fontSizeBig;
         &:before{
             content: '//';
         }
+        @include for-phone-only{
+            margin: 0.5em 0 0.2em 0;
+        }
     }
 
     p{
-        color: $cinza3;
+        color: $grey3;
     }
 
     .footer-wapper {
-        background-color: $branco;
+        background-color: $white;
         padding: $padding2;
         display: inline-block;
         section {
@@ -44,12 +107,21 @@ footer {
     }
     .footer-infos {
         width: 50%;
+        @include for-phone-only{
+            width: 100%;
+        }
     }
     .footer-contact {
         width: 20%;
+        @include for-phone-only{
+            width: 100%;
+        }
     }
     .footer-social-media {
         width: 20%;
+        @include for-phone-only{
+            width: 100%;
+        }
         ul {
             list-style-type: none;
             display: inline-block;
