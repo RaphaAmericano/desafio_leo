@@ -21,6 +21,83 @@ h1, h2, h3, h4, h5, h6 {
   .button :visited {
     color: inherit; }
 
+header {
+  display: inline-block;
+  width: 100%;
+  background-color: white; }
+  header nav {
+    padding: 1em 0; }
+    @media (max-width: 599px) {
+      header nav {
+        position: relative; } }
+  header .brand {
+    float: left; }
+    @media (max-width: 599px) {
+      header .brand {
+        position: relative;
+        width: 100%;
+        margin-bottom: 70px; } }
+    @media (max-width: 599px) {
+      header .brand img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: 0 auto; } }
+  header .search-field, header .user {
+    float: right; }
+    @media (max-width: 599px) {
+      header .search-field, header .user {
+        float: none; } }
+  @media (max-width: 599px) {
+    header .user {
+      width: 100%;
+      margin: 1em 0; } }
+  header .user img, header .user .content {
+    float: left;
+    margin: 0 0.5em; }
+  header .user .content em, header .user .content span {
+    display: block;
+    text-align: center; }
+  header .user button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin: 0 1em;
+    padding: 1.2em 1.4em; }
+  header .search-field {
+    padding: 0em 1em;
+    margin: 0 1em;
+    border-right: 2px solid #a7a7a7; }
+    @media (max-width: 599px) {
+      header .search-field {
+        margin: 1em 0;
+        border-right: none; } }
+    header .search-field form {
+      position: relative; }
+      @media (max-width: 599px) {
+        header .search-field form {
+          margin: 2em 0 0.5em 0; } }
+      header .search-field form input[type=submit] {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        border: none;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        background-size: contain;
+        background-image: url(../img/search.png);
+        background-position: -1px 4px; }
+      header .search-field form input[type=search] {
+        background-color: #efefef;
+        border: 2px solid #e5e1e2;
+        border-radius: 20px;
+        padding: 1em 2em; }
+        @media (max-width: 599px) {
+          header .search-field form input[type=search] {
+            width: 100%; } }
+
 .slider {
   position: relative; }
   .slider .slides .slide {

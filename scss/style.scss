@@ -27,6 +27,104 @@ h1, h2, h3, h4, h5, h6 {
         color: inherit;
     }
 }
+//Header
+header {
+    display: inline-block;
+    width: 100%;
+    background-color: $white;
+    nav {
+        padding: $padding1;
+        @include for-phone-only {
+            position: relative;
+        }
+    }
+    .brand {
+        float: left;
+        @include for-phone-only {
+            position: relative;
+            width: 100%;
+            margin-bottom: 70px;
+        }
+        img {
+            @include for-phone-only {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                margin:0 auto;
+            }
+        }
+    }
+    .search-field, .user {
+        float: right;
+        @include for-phone-only {
+            float: none;
+        }
+    }
+    .user {
+        @include for-phone-only { 
+            width: 100%;
+            margin: 1em 0 ;
+        }
+        img, .content {
+            float: left;
+            margin: 0 0.5em;
+        }
+        .content {
+            em, span {
+                display: block;
+                text-align: center;
+            }
+        }
+        button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            margin: $margin01;
+            padding: $padding3;
+        }
+    }
+    .search-field {
+        padding: $padding01;
+        margin: $margin01;
+        border-right: 2px solid $grey3;
+        @include for-phone-only {
+            margin: 1em 0;
+            border-right: none;
+        }
+        form {
+            position: relative;
+            @include for-phone-only {
+                margin:2em 0 0.5em 0;
+            }
+            input{
+                &[type=submit]{
+                    position: absolute;
+                    right: 10px;
+                    top: 10px;
+                    border: none;
+                    background-repeat: no-repeat;
+                    background-color: transparent;
+                    background-size: contain;
+                    background-image: url(../img/search.png);
+                    background-position: -1px 4px;
+                }
+                &[type=search] {
+                    @include for-phone-only {
+                        width: 100%;
+                    }
+                    background-color: $grey2;
+                    border: 2px solid $grey1;
+                    border-radius: 20px;
+                    padding: 1em 2em;
+                }
+            }
+        }
+    }
+}
+
+
 //Main
 //Slider
 .slider {
