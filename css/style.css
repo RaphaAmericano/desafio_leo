@@ -24,7 +24,10 @@ h1, h2, h3, h4, h5, h6 {
 .slider {
   position: relative; }
   .slider .slides .slide {
+    display: none;
     padding: 2em 0; }
+    .slider .slides .slide.active {
+      display: inherit; }
     .slider .slides .slide .card {
       background-color: rgba(0, 0, 0, 0.5);
       padding: 1.2em 1.4em;
