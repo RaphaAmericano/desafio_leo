@@ -21,17 +21,29 @@ h1, h2, h3, h4, h5, h6 {
   .button :visited {
     color: inherit; }
 
-.slider .slide {
-  padding: 2em 0; }
-  .slider .slide .card {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 1.2em 1.4em;
-    max-width: 400px; }
-    .slider .slide .card .button {
-      display: inline-block;
-      background: transparent;
-      color: white;
-      border: 4px solid white; }
+.slider {
+  position: relative; }
+  .slider .slides .slide {
+    padding: 2em 0; }
+    .slider .slides .slide .card {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 1.2em 1.4em;
+      max-width: 400px; }
+      .slider .slides .slide .card .button {
+        display: inline-block;
+        background: transparent;
+        color: white;
+        border: 4px solid white; }
+  .slider .slider-controls {
+    top: 50%;
+    position: absolute;
+    width: 100%; }
+    .slider .slider-controls .left_arrow {
+      margin-left: 25px;
+      float: left; }
+    .slider .slider-controls .right_arrow {
+      margin-right: 25px;
+      float: right; }
 
 .courses hr {
   margin: 1.2em 0; }
