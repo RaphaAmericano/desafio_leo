@@ -3,7 +3,6 @@
     var $arrowLeft = document.getElementsByClassName('left_arrow')[0];
     var $arrowRight = document.getElementsByClassName('right_arrow')[0];
     
-
     $arrowLeft.addEventListener('click', function(e){
         e.preventDefault();
         for(var i = 0; i < $slides.length; i++){ 
