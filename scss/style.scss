@@ -176,6 +176,19 @@ header {
     hr {
         margin: 1.2em 0;
     }
+    .courses_list, .add_course_section {
+        display: inline-block;
+    }
+
+    .add_course_section {
+        form {
+            input,textarea,label{
+                clear: both;
+                float: left;
+            }
+        }
+    }
+
     .card {
         box-sizing: border-box;
         float: left;

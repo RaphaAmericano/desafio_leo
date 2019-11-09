@@ -134,6 +134,13 @@ header {
 .courses hr {
   margin: 1.2em 0; }
 
+.courses .courses_list, .courses .add_course_section {
+  display: inline-block; }
+
+.courses .add_course_section form input, .courses .add_course_section form textarea, .courses .add_course_section form label {
+  clear: both;
+  float: left; }
+
 .courses .card {
   box-sizing: border-box;
   float: left;
