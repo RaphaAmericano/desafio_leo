@@ -1,3 +1,7 @@
+//Font Family
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700&display=swap');
+$fontFamily1: 'Roboto', sans-serif;
+
 //margins
 $margin10: 1em 0;
 $margin01: 0 1em;
@@ -14,3 +18,4 @@ $fontSizeBig: $fontSizeDefault * 1.5;
 $fontSizeExtraBig: $fontSizeDefault * 2;
 $fontSizeSmall: $fontSizeDefault * 0.5;
 $fontSizeExtraSmall: $fontSizeDefault * 0.2;
+

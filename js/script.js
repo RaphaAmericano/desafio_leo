@@ -116,7 +116,6 @@
     }
     function setSlider(data){
         var courses = JSON.parse(data);
-        console.log(courses);
         var $slides = document.getElementsByClassName('slides')[0];
     
         if(courses.records.length > 0 ){
@@ -163,27 +162,37 @@
     });
 
     var $formCourse = document.forms.add;
-    $formCourse.onsubmit = function(e){
-        // var formData = new FormData($formCourse); 
-        // for(var i = 0; i < $formCourse.elements.length -1; i++ ){
-        //     formData.append($formCourse.elements[i].name, $formCourse.elements[i].value);
-        // }
-        // formData.forEach(function(value, key){
-        //     console.log(value);
-        //     console.log(key);
-        // });
-        // console.log(formData);
-        var ajax = new XMLHttpRequest();
-        var dataToSend = {
-            title: $formCourse.elements.title.value,
-            description: $formCourse.elements.description.value,
-            banner: $formCourse.elements.banner.value
+    $formCourse.addEventListener('submit', function(e){
+        e.preventDefault();
+        var photo = document.querySelector('input[type=file]').files[0];
+        var mime_type = ['image/jpeg', 'image/png'];
+        if(mime_type.indexOf(photo.type)){
+            console.log("Nao e do tipo")
+            return;
         }
-        dataToSend = JSON.parse(dataToSend);
-        ajax.open("POST", $formCourse.getAttribute('action'), true);
-        ajax.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+        var formData = {
+            "title": $formCourse.elements[0].value,
+            "description": $formCourse.elements[1].value,
+            "banner": photo
+        };
+        console.log(formData);
+        console.log(JSON.stringify(formData));
+     
+        
+        var ajax = new XMLHttpRequest();
+        ajax.addEventListener('load', function(e){
+            console.log(ajax.response);
+        })
+        ajax.upload.addEventListener('progress', function(){
+            var percent = (e.loaded / e.total) * 100;
+            console.log(percent);
+        });
+
+        ajax.open("POST", $formCourse.getAttribute('action'));
+        ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         ajax.setRequestHeader("Access-Control-Allow-Origin", "*");
-        ajax.send(dataToSend);
+        ajax.setRequestHeader("Access-Control-Allow-Headers", "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+        ajax.send(formData);
 
         ajax.onreadystatechange = function(){
             if(ajax.readyState == 4 && ajax.status == 200 ){
@@ -191,7 +200,7 @@
                 console.log(data);
             } 
         }
-    };
+    });
 
     
 
