@@ -12,9 +12,16 @@ $database = new Database();
 $db = $database->getConnection();
 
 $curso = new Curso($db);
+$nome = $_POST['title'];
+$description = $_POST['description'];
+$banner = $_POST['banner'];
+var_dump($nome);
+var_dump($description);
+var_dump($banner);
+
 
 $data = json_decode(file_get_contents("php://input"));
-
+var_dump($data);
 if(!empty($data->title) &&
     !empty($data->description) &&
     !empty($data->banner) ){

@@ -51,6 +51,73 @@
         }
     });
 
+    //Load All Courses
+
+    var courses;
+    selectAllCourses();
+    function selectAllCourses(){
+        var ajax = new XMLHttpRequest();
+        ajax.open("POST", 'http://leo.api/api/read.php', true);
+        ajax.send();
+        
+        ajax.onreadystatechange = function(){
+            if(ajax.readyState == 4 && ajax.status == 200 ){
+                var data = ajax.responseText;    
+                setMyCourses(data);            
+            }     
+        }
+    }
+
+    function setMyCourses(data){
+        var courses = JSON.parse(data);
+        console.log(courses);
+        if(courses.records.length > 0 ){
+            var $containerCourses = document.getElementsByClassName('courses_list')[0];
+            var $h3 = document.createElement('h3');
+            $h3.innerText = "Meus Cursos";
+            var $hr = document.createElement('hr');
+            
+            for(var i = 0; i < courses.records.length; i++ ){
+                var $card = document.createElement('article')
+                $card.classList.add('card');
+                //Checar se e' novo
+                var $labelNew = document.createElement('img');
+                $labelNew.classList.add('new-label')
+                $labelNew.setAttribute('src', 'img/label_new.png');
+                //
+                var $banner = document.createElement('img');
+                $banner.setAttribute('src', courses.records[i].banner );
+
+                var $cardWapper = document.createElement('div');
+                $cardWapper.classList.add('card-wapper');
+                var $h4title = document.createElement('h4');
+                $h4title.innerText = courses.records[i].nome;
+                var $pDescription = document.createElement('p');
+                $pDescription.innerText = courses.records[i].descricao;
+                var $aLink = document.createElement('a');
+                $aLink.classList.add('button');
+                $aLink.innerText = 'Ver Curso';
+                $aLink.setAttribute('href', '#');
+
+                $cardWapper.append($h4title);
+                $cardWapper.append($pDescription);
+                $cardWapper.append($aLink);
+
+                $card.append($labelNew);
+                $card.append($banner);
+                $card.append($cardWapper);
+
+
+
+                $containerCourses.insertBefore($card, $containerCourses.firstChild);
+            }
+
+            $containerCourses.insertBefore($hr, $containerCourses.firstElementChild);
+            $containerCourses.insertBefore($h3, $containerCourses.firstElementChild);
+        }
+
+    }
+
     ///Add Course
     var $addCourseBtn = document.querySelectorAll('.add-course-wapper a')[0];
     var $courseAddSection = document.getElementsByClassName('add_course_section')[0];
@@ -61,5 +128,39 @@
         $courseListSection.style.display = 'none';
         $courseAddSection.style.display = 'inline-block';
     });
+
+    var $formCourse = document.forms.add;
+    $formCourse.onsubmit = function(e){
+        // var formData = new FormData($formCourse); 
+        // for(var i = 0; i < $formCourse.elements.length -1; i++ ){
+        //     formData.append($formCourse.elements[i].name, $formCourse.elements[i].value);
+        // }
+        // formData.forEach(function(value, key){
+        //     console.log(value);
+        //     console.log(key);
+        // });
+        // console.log(formData);
+        var ajax = new XMLHttpRequest();
+        var dataToSend = {
+            title: $formCourse.elements.title.value,
+            description: $formCourse.elements.description.value,
+            banner: $formCourse.elements.banner.value
+        }
+        dataToSend = JSON.parse(dataToSend);
+        ajax.open("POST", $formCourse.getAttribute('action'), true);
+        ajax.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+        ajax.setRequestHeader("Access-Control-Allow-Origin", "*");
+        ajax.send(dataToSend);
+
+        ajax.onreadystatechange = function(){
+            if(ajax.readyState == 4 && ajax.status == 200 ){
+                var data = ajax.responseText;
+                console.log(data);
+            } 
+        }
+    };
+
+    
+
 
 })();

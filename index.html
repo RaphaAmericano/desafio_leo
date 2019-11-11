@@ -73,8 +73,9 @@
         <section class="courses container">
             
             <div class="courses_list">
-                <h3>Meus cursos</h3>
+                <!-- <h3>Meus cursos</h3>
                 <hr>
+                
                 <article class="card">
                     <img src="https://via.placeholder.com/70x50/FFFF000?Text=new" alt="" class="new-label">
                     <img src="https://via.placeholder.com/300x150" alt="">
@@ -83,43 +84,7 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                         <a href="#" class="button">Ver curso</a>
                     </div>
-                </article>
-                <article class="card">
-                    <img src="https://via.placeholder.com/70x50/FFFF000?Text=new" alt="" class="new-label">
-                    <img src="https://via.placeholder.com/300x150" alt="">
-                    <div class="card-wapper">
-                        <h4>Pellentesque malesuada</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        <a href="#" class="button">Ver curso</a>
-                    </div>
-                </article>
-                <article class="card">
-                    <img src="https://via.placeholder.com/70x50/FFFF000?Text=new" alt="" class="new-label">
-                    <img src="https://via.placeholder.com/300x150" alt="">
-                    <div class="card-wapper">
-                        <h4>Pellentesque malesuada</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        <a href="#" class="button">Ver curso</a>
-                    </div>
-                </article>
-                <article class="card">
-                    <img src="https://via.placeholder.com/70x50/FFFF000?Text=new" alt="" class="new-label">
-                    <img src="https://via.placeholder.com/300x150" alt="">
-                    <div class="card-wapper">
-                        <h4>Pellentesque malesuada</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        <a href="#" class="button">Ver curso</a>
-                    </div>
-                </article>
-                <article class="card">
-                    <img src="https://via.placeholder.com/70x50/FFFF000?Text=new" alt="" class="new-label">
-                    <img src="https://via.placeholder.com/300x150" alt="">
-                    <div class="card-wapper">
-                        <h4>Pellentesque malesuada</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        <a href="#" class="button">Ver curso</a>
-                    </div>
-                </article>
+                </article> -->
                 <article class="card add-course-wapper">
                     <a href="#">
                         <img src="img/add_course.png" alt="">
@@ -127,10 +92,11 @@
                     </a>
                 </article>
             </div>
-            <div class="add_course_section" style="display:none">
+            <!-- <div class="add_course_section" style="display:none"> -->
+            <div class="add_course_section" >
                 <h3>Adicionar Curso</h3>
                 <hr>
-                <form action="#">
+                <form action="http://leo.api/api/create_course.php" method="POST" name="add" enctype="multipart/form-data">
                     <label for="title">Nome</label>
                     <input type="text" name="title">
                     <label for="description">Descrição</label>
@@ -146,7 +112,7 @@
         <div class="footer-wapper">
             <div class="container">
                 <section class="footer-infos">
-                    <img src="https://via.placeholder.com/200x100?Text=LEO" alt="">
+                    <img src="img/leo_logo_grey.png" alt="">
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda magni autem maxime tenetur molestias aperiam dignissimos inventore aut! Ut sapiente pariatur aliquam laudantium possimus iste, voluptatibus distinctio consequatur? Reprehenderit, accusamus?</p>
                 </section>
                 <section class="footer-contact">
@@ -157,9 +123,9 @@
                 <section class="footer-social-media">
                     <h6>Redes Sociais</h6>
                     <ul>
-                        <li><img src="https://via.placeholder.com/36" alt=""></li>
-                        <li><img src="https://via.placeholder.com/36" alt=""></li>
-                        <li><img src="https://via.placeholder.com/36" alt=""></li>
+                        <li><img src="img/icon_twitter.png" alt=""></li>
+                        <li><img src="img/icon_youtube.png" alt=""></li>
+                        <li><img src="img/icon_pinteres.png" alt=""></li>
                     </ul>
                 </section>
             </div>
