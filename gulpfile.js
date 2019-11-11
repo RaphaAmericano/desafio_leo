@@ -14,7 +14,7 @@ gulp.task('scss', function(){
 
 gulp.task('javascript', function(){
     return gulp.src('./js/*.js')
-        .pipe(uglify())
+        //.pipe(uglify())
         .pipe(concat('script.min.js'))
         .pipe(gulp.dest('./'));
 });

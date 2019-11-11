@@ -63,14 +63,14 @@
         ajax.onreadystatechange = function(){
             if(ajax.readyState == 4 && ajax.status == 200 ){
                 var data = ajax.responseText;    
-                setMyCourses(data);            
+                setMyCourses(data);     
+                setSlider(data);       
             }     
         }
     }
 
     function setMyCourses(data){
         var courses = JSON.parse(data);
-        console.log(courses);
         if(courses.records.length > 0 ){
             var $containerCourses = document.getElementsByClassName('courses_list')[0];
             var $h3 = document.createElement('h3');
@@ -106,9 +106,6 @@
                 $card.append($labelNew);
                 $card.append($banner);
                 $card.append($cardWapper);
-
-
-
                 $containerCourses.insertBefore($card, $containerCourses.firstChild);
             }
 
@@ -117,6 +114,42 @@
         }
 
     }
+    function setSlider(data){
+        var courses = JSON.parse(data);
+        console.log(courses);
+        var $slides = document.getElementsByClassName('slides')[0];
+    
+        if(courses.records.length > 0 ){
+            for(var i = 0; i < courses.records.length; i++){
+                var $slide = document.createElement('article');
+                $slide.classList.add('slide');
+                if(i === 0) {
+                    $slide.classList.add('active');
+                }
+                $slide.setAttribute('style', 'background-image:url("'+courses.records[i].banner+'")');
+                var $container = document.createElement('div');
+                $container.classList.add('container');
+                var $card = document.createElement('div');
+                $card.classList.add('card');
+                var $h2Title = document.createElement('h2');
+                $h2Title.innerText = courses.records[i].nome;
+                var $pDescription = document.createElement('p');
+                $pDescription.innerText = courses.records[i].descricao;
+                var $aLink = document.createElement('a');
+                $aLink.classList.add('button');
+                $aLink.setAttribute('href', '#');
+                $aLink.innerText = "Ver Curso";
+                $card.append($h2Title);
+                $card.append($pDescription);
+                $card.append($aLink);
+                $container.append($card);
+                $slide.append($container);
+                $slides.append($slide);
+            }
+            
+        }
+    }
+
 
     ///Add Course
     var $addCourseBtn = document.querySelectorAll('.add-course-wapper a')[0];
