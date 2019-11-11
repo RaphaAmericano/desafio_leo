@@ -14,7 +14,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 auto; }
 
 .button {
-  border-radius: 20px;
+  border-radius: 32px;
   padding: 0.6em 0.2em;
   text-transform: uppercase;
   font-weight: bold;
@@ -28,7 +28,8 @@ header {
   width: 100%;
   background-color: white; }
   header nav {
-    padding: 1em 0; }
+    padding: 1.5em 0;
+    height: 38px; }
     @media (max-width: 599px) {
       header nav {
         position: relative; } }
@@ -52,22 +53,56 @@ header {
     @media (max-width: 599px) {
       header .search-field, header .user {
         float: none; } }
-  @media (max-width: 599px) {
-    header .user {
-      width: 100%;
-      margin: 1em 0; } }
-  header .user img, header .user .content {
-    float: left;
-    margin: 0 0.5em; }
-  header .user .content em, header .user .content span {
-    display: block;
-    text-align: center; }
-  header .user button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    margin: 0 1em;
-    padding: 1.2em 1.4em; }
+  header .user {
+    position: relative; }
+    @media (max-width: 599px) {
+      header .user {
+        width: 100%;
+        margin: 1em 0; } }
+    header .user img, header .user .content {
+      float: left;
+      margin: 0 0.5em; }
+    header .user .content small {
+      color: #a7a7a7;
+      font-size: 8px; }
+    header .user .content span {
+      color: #a7a7a7; }
+    header .user .content span, header .user .content small {
+      display: block;
+      text-align: center; }
+    header .user button {
+      color: #a7a7a7;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      margin: 0 1em;
+      padding: 1.2em 1.4em; }
+    header .user .navbar {
+      background-color: #efefef;
+      position: absolute;
+      border: 2px solid #e5e1e2;
+      top: 0;
+      right: 0;
+      padding: 0;
+      height: auto;
+      min-width: 200px;
+      z-index: 10; }
+      header .user .navbar button {
+        margin: 0; }
+      header .user .navbar ul {
+        list-style-type: none;
+        padding-left: 0;
+        padding: 0 0.8em; }
+        header .user .navbar ul li {
+          text-align: center;
+          padding: 0.6em 0; }
+          header .user .navbar ul li:first-child {
+            border-top: 1px solid #e5e1e2; }
+          header .user .navbar ul li .button {
+            color: #a7a7a7;
+            border-radius: 25px;
+            border: 2px solid #e5e1e2;
+            cursor: pointer; }
   header .search-field {
     padding: 0em 1em;
     margin: 0 1em;
@@ -92,6 +127,7 @@ header {
         background-image: url(../img/search.png);
         background-position: -1px 4px; }
       header .search-field form input[type=search] {
+        width: 250px;
         background-color: #efefef;
         border: 2px solid #e5e1e2;
         border-radius: 20px;
@@ -99,6 +135,8 @@ header {
         @media (max-width: 599px) {
           header .search-field form input[type=search] {
             width: 100%; } }
+        header .search-field form input[type=search]::placeholder {
+          color: #a7a7a7; }
 
 .slider {
   position: relative; }
@@ -112,10 +150,13 @@ header {
       padding: 1.2em 1.4em;
       max-width: 400px;
       color: white; }
+      .slider .slides .slide .card h2 {
+        font-size: 32px; }
       .slider .slides .slide .card .button {
         display: inline-block;
         background: transparent;
-        border: 4px solid white; }
+        border: 2px solid white;
+        padding: 0.8em 3em; }
   .slider .slider-controls {
     top: 50%;
     position: absolute;

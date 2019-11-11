@@ -17,6 +17,32 @@
         localStorage.setItem('logged', true);
     });
 
+    //Nav menu
+    var $navmenu = document.getElementsByClassName('navbar')[0];
+    var $navButtonOn = document.querySelector('.user button');
+    var $navButtonOff = document.querySelector('.navbar button');
+
+    $navButtonOn.addEventListener('click', function(){
+        if($navmenu.style.display == 'none'){
+            $navmenu.style.display = 'block';
+        } 
+    });
+    $navButtonOff.addEventListener('click', function(){
+        if($navmenu.style.display !== 'none'){
+            $navmenu.style.display = 'none';
+        } 
+    });
+
+    //Logout
+    var $logoutButton = document.querySelector('.navbar a.button');
+    $logoutButton.addEventListener('click', function(e){
+        e.preventDefault();
+        localStorage.clear();
+        window.location.reload()
+    });
+
+
+
     //Slider
 
     $arrowLeft.addEventListener('click', function(e){

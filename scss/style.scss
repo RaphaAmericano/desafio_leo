@@ -18,7 +18,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
 }
 .button {
-    border-radius: 20px;
+    border-radius: 32px;
     padding: 0.6em 0.2em;
     text-transform: uppercase;
     font-weight: bold;
@@ -34,7 +34,8 @@ header {
     width: 100%;
     background-color: $white;
     nav {
-        padding: $padding1;
+        padding: 1.5em 0;
+        height: 38px;
         @include for-phone-only {
             position: relative;
         }
@@ -68,22 +69,63 @@ header {
             width: 100%;
             margin: 1em 0 ;
         }
+        position: relative;
         img, .content {
             float: left;
             margin: 0 0.5em;
         }
         .content {
-            em, span {
+            small{
+                color: $grey3;
+                font-size: $fontSizeSmall;
+            }
+            span{
+                color: $grey3;
+            }
+            span, small {
                 display: block;
                 text-align: center;
             }
         }
         button {
+            color: $grey3;
             background-color: transparent;
             border: none;
             cursor: pointer;
             margin: $margin01;
             padding: $padding3;
+        }
+        .navbar{
+            background-color: $grey2;
+            position: absolute;
+            border: 2px solid $grey1;
+            top: 0;
+            right: 0;
+            padding: 0;
+            height:auto;
+            min-width: 200px;
+            z-index: 10;
+            button{
+                margin: 0;
+            }
+            ul{
+                list-style-type: none;
+                padding-left: 0;
+                padding: 0 0.8em;
+                li {
+                    text-align: center;
+                    padding: 0.6em 0;
+                    &:first-child{
+                        border-top: 1px solid $grey1;
+                    }
+                    .button{
+                        color: $grey3;
+                        border-radius: 25px;
+                        border: 2px solid $grey1;
+                        cursor: pointer;
+                    }
+                }
+            }
         }
     }
     .search-field {
@@ -115,10 +157,14 @@ header {
                     @include for-phone-only {
                         width: 100%;
                     }
+                    width: 250px;
                     background-color: $grey2;
                     border: 2px solid $grey1;
                     border-radius: 20px;
                     padding: 1em 2em;
+                    &::placeholder{
+                        color: $grey3;
+                    }
                 }
             }
         }
@@ -142,10 +188,14 @@ header {
                 padding: $padding3;
                 max-width: 400px;
                 color: $white;
+                h2{
+                    font-size: $fontSizeExtraBig;
+                }
                 .button {
                     display: inline-block;
                     background: transparent;
-                    border: 4px solid $white;
+                    border: 2px solid $white;
+                    padding: 0.8em 3em;
                 }
             }
         }
@@ -183,7 +233,6 @@ header {
     }
 
     .add_course_section {
-    
         form {
             input,textarea,label{
                 clear: both;
