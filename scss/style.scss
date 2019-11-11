@@ -250,7 +250,8 @@ footer {
     h6 {
         color: $grey3;
         margin-top: 0;
-        font-size: $fontSizeBig;
+        margin-bottom: 1em;
+        font-size: $fontSizeDefault;
         &:before{
             content: '//';
         }
@@ -261,30 +262,30 @@ footer {
 
     p{
         color: $grey3;
+        margin: 0.4em 0;
     }
 
     .footer-wapper {
         background-color: $white;
-        padding: $padding1;
+        padding: 2.5em 0;
         display: inline-block;
-        section {
-            float: left;
-            
-        }
     }
     .footer-infos {
+        float: left;
         width: 50%;
         @include for-phone-only{
             width: 100%;
         }
     }
     .footer-contact {
+        float: right;
         width: 20%;
         @include for-phone-only{
             width: 100%;
         }
     }
     .footer-social-media {
+        float: right;
         width: 20%;
         @include for-phone-only{
             width: 100%;
@@ -293,6 +294,7 @@ footer {
             list-style-type: none;
             display: inline-block;
             padding: 0;
+            margin: 0;
             li {
                 float: left;
                 margin-left: 0.4em;

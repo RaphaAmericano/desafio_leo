@@ -188,7 +188,8 @@ header {
 footer h6 {
   color: #a7a7a7;
   margin-top: 0;
-  font-size: 24px; }
+  margin-bottom: 1em;
+  font-size: 16px; }
   footer h6:before {
     content: '//'; }
   @media (max-width: 599px) {
@@ -196,28 +197,30 @@ footer h6 {
       margin: 0.5em 0 0.2em 0; } }
 
 footer p {
-  color: #a7a7a7; }
+  color: #a7a7a7;
+  margin: 0.4em 0; }
 
 footer .footer-wapper {
   background-color: white;
-  padding: 1em 0;
+  padding: 2.5em 0;
   display: inline-block; }
-  footer .footer-wapper section {
-    float: left; }
 
 footer .footer-infos {
+  float: left;
   width: 50%; }
   @media (max-width: 599px) {
     footer .footer-infos {
       width: 100%; } }
 
 footer .footer-contact {
+  float: right;
   width: 20%; }
   @media (max-width: 599px) {
     footer .footer-contact {
       width: 100%; } }
 
 footer .footer-social-media {
+  float: right;
   width: 20%; }
   @media (max-width: 599px) {
     footer .footer-social-media {
@@ -225,7 +228,8 @@ footer .footer-social-media {
   footer .footer-social-media ul {
     list-style-type: none;
     display: inline-block;
-    padding: 0; }
+    padding: 0;
+    margin: 0; }
     footer .footer-social-media ul li {
       float: left;
       margin-left: 0.4em; }
