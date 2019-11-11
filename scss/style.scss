@@ -14,7 +14,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .container {
     position: relative;
-    width: 80%; //
+    width: 85%; //
     margin: 0 auto;
 }
 .button {
@@ -179,15 +179,17 @@ header {
     }
     .courses_list, .add_course_section {
         display: inline-block;
+        width: 100%;
     }
 
     .add_course_section {
+    
         form {
             input,textarea,label{
                 clear: both;
                 float: left;
+                }
             }
-        }
     }
 
     .card {
@@ -196,15 +198,16 @@ header {
         background: $white;
         border: 1px solid $grey1;
         border-radius: 4px 4px 4px 4px;
-        width: 28%;
+        width: 23%;
         max-width: 310px;
+        height: 308px;
         position: relative;
-        margin-left: 78px;
+        margin-left: 20px;
         margin-bottom: 30px;
         margin-top: 30px;
-        &:nth-child(3n){
-            margin-left: 0;
-        }
+        // &:nth-child(4n+1){
+        //     margin-left: 0;
+        // }
         @include for-phone-only{
             width: 100%;
             margin-left: 0;
@@ -226,7 +229,17 @@ header {
             color: $white;
         }
         .card-wapper {
+            margin-top: 10em;
             padding: 0 0.8em 0.8em 0.8em;
+            position: absolute;
+            bottom: 0;
+            box-sizing: border-box;
+            width:100%;
+            .button {
+                &:hover{
+                    background: $green2;
+                }
+            }
         }
     }
     .add-course-wapper {
@@ -236,6 +249,16 @@ header {
         img {
             height: 100%;
             width: 100%;
+        }
+        a { 
+            font-size: $fontSizeExtraBig;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            color: $grey3;
+            strong {
+                display: block;
+            }
         }
     }
 

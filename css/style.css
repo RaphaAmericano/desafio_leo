@@ -10,7 +10,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .container {
   position: relative;
-  width: 80%;
+  width: 85%;
   margin: 0 auto; }
 
 .button {
@@ -137,7 +137,8 @@ header {
   margin: 1.2em 0; }
 
 .courses .courses_list, .courses .add_course_section {
-  display: inline-block; }
+  display: inline-block;
+  width: 100%; }
 
 .courses .add_course_section form input, .courses .add_course_section form textarea, .courses .add_course_section form label {
   clear: both;
@@ -149,14 +150,13 @@ header {
   background: white;
   border: 1px solid #e5e1e2;
   border-radius: 4px 4px 4px 4px;
-  width: 28%;
+  width: 23%;
   max-width: 310px;
+  height: 308px;
   position: relative;
-  margin-left: 78px;
+  margin-left: 20px;
   margin-bottom: 30px;
   margin-top: 30px; }
-  .courses .card:nth-child(3n) {
-    margin-left: 0; }
   @media (max-width: 599px) {
     .courses .card {
       width: 100%;
@@ -175,7 +175,14 @@ header {
     background: #01a02a;
     color: white; }
   .courses .card .card-wapper {
-    padding: 0 0.8em 0.8em 0.8em; }
+    margin-top: 10em;
+    padding: 0 0.8em 0.8em 0.8em;
+    position: absolute;
+    bottom: 0;
+    box-sizing: border-box;
+    width: 100%; }
+    .courses .card .card-wapper .button:hover {
+      background: #016b21; }
 
 .courses .add-course-wapper {
   background: transparent;
@@ -184,6 +191,14 @@ header {
   .courses .add-course-wapper img {
     height: 100%;
     width: 100%; }
+  .courses .add-course-wapper a {
+    font-size: 32px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #a7a7a7; }
+    .courses .add-course-wapper a strong {
+      display: block; }
 
 footer h6 {
   color: #a7a7a7;
