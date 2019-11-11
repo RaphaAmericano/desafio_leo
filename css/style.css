@@ -39,7 +39,8 @@ header {
       header .brand {
         position: relative;
         width: 100%;
-        margin-bottom: 70px; } }
+        margin-bottom: 70px;
+        margin-top: 20px; } }
     @media (max-width: 599px) {
       header .brand img {
         position: absolute;
@@ -52,7 +53,7 @@ header {
     float: right; }
     @media (max-width: 599px) {
       header .search-field, header .user {
-        float: none; } }
+        float: left; } }
   header .user {
     position: relative; }
     @media (max-width: 599px) {
@@ -87,6 +88,9 @@ header {
       height: auto;
       min-width: 200px;
       z-index: 10; }
+      @media (max-width: 599px) {
+        header .user .navbar {
+          width: 100%; } }
       header .user .navbar button {
         margin: 0; }
       header .user .navbar ul {
@@ -113,9 +117,6 @@ header {
         border-right: none; } }
     header .search-field form {
       position: relative; }
-      @media (max-width: 599px) {
-        header .search-field form {
-          margin: 2em 0 0.5em 0; } }
       header .search-field form input[type=submit] {
         position: absolute;
         right: 10px;
@@ -229,6 +230,9 @@ header {
   background: transparent;
   border: 4px dashed #e5e1e2;
   padding: 1em; }
+  @media (max-width: 599px) {
+    .courses .add-course-wapper {
+      padding: 3em; } }
   .courses .add-course-wapper img {
     height: 100%;
     width: 100%; }

@@ -46,6 +46,7 @@ header {
             position: relative;
             width: 100%;
             margin-bottom: 70px;
+            margin-top: 20px;
         }
         img {
             @include for-phone-only {
@@ -61,7 +62,7 @@ header {
     .search-field, .user {
         float: right;
         @include for-phone-only {
-            float: none;
+            float: left;
         }
     }
     .user {
@@ -105,6 +106,9 @@ header {
             height:auto;
             min-width: 200px;
             z-index: 10;
+            @include for-phone-only{
+                width: 100%;
+            }
             button{
                 margin: 0;
             }
@@ -138,9 +142,9 @@ header {
         }
         form {
             position: relative;
-            @include for-phone-only {
-                margin:2em 0 0.5em 0;
-            }
+            // @include for-phone-only {
+            //     margin:2em 0 0.5em 0;
+            // }
             input{
                 &[type=submit]{
                     position: absolute;
@@ -295,6 +299,9 @@ header {
         background: transparent;
         border: 4px dashed $grey1;
         padding: 1em;
+        @include for-phone-only{
+            padding: 3em;
+        }
         img {
             height: 100%;
             width: 100%;
