@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5, h6 {
 .container {
     position: relative;
     width: 85%; //
-    margin: 0 auto;
+    margin: 2em auto;
 }
 .button {
     border-radius: 32px;
@@ -223,6 +223,38 @@ header {
             }
         }
     }
+    .dot-controls {
+        position: relative;
+        ul {
+            border: 1px solid $grey3 ;
+            border-radius: 18px;
+            position: absolute;
+            list-style-type: none;
+            width: 400px;
+            height: 25px;
+            top:0;
+            bottom:0;
+            left:0;
+            right:0;
+            margin: 0 auto;
+            padding: 0;
+            li {
+                border-radius: 28px;
+                border: 1px solid $grey2;
+                margin: 0 0.5em;
+                display: inline-block;
+                a{  
+                    text-decoration: none;
+                    &.active{
+                        background-color: $black;
+                    }
+                    &:visited {
+                        color: inherit;
+                    }
+                }
+            }
+        }
+    }
 }
 
 
@@ -231,18 +263,61 @@ header {
     hr {
         margin: 1.2em 0;
     }
+    h3 {
+        color: $grey3;
+    }
     .courses_list, .add_course_section {
         display: inline-block;
         width: 100%;
     }
-
     .add_course_section {
         form {
+            position: relative;
+            label {
+                margin-top: 15px;
+                color: $grey3;
+                &:first-child{
+                    margin-top: 0;
+                }
+            }
             input,textarea,label{
                 clear: both;
                 float: left;
+            }
+            .input[type=text], textarea{
+                background-color: $white;
+                border: 2px solid $grey1;
+                
+                padding: 1em 2em;
+            }
+            .input[text=file]{
+                &::before{
+                    border:1px solid $grey1;
+                    color: $grey1;
                 }
             }
+            .input[type=submit]{
+                padding: 1em 4em;
+            }
+        }
+        button{
+            @include for-phone-only{
+                width: 25px;
+                height: 25px;
+                top: -10px;
+                right: -10px;
+            }
+            cursor:pointer;
+            float: left;
+            clear: both;
+            width: 25px;
+            height: 25px;
+            box-shadow: 4px 4px 4px $black;
+            border-radius: 28px;
+            background-color: transparent;
+            background-image: url(../img/icon_quit.png);
+            background-size: cover;
+        }
     }
 
     .card {
@@ -401,12 +476,18 @@ footer {
         width: 800px;
         background-color: $white;
         border-radius: 10px;
+        @include for-phone-only{
+            width: 80%;
+        }
         img {
             border-radius: 10px 10px 0 0;
             width: 100%;
         }
         .login {
             padding: 1em 10em;
+            @include for-phone-only{
+                padding: $padding11;
+            }
         }
         .button {
             background-color: $blue1;
@@ -414,9 +495,18 @@ footer {
             text-align: center;
             color: $white;
             padding: $padding1;
+            @include for-phone-only{
+                margin: 0 1em;
+            }
         }
         .quit_button {
             position: absolute;
+            @include for-phone-only{
+                width: 25px;
+                height: 25px;
+                top: -10px;
+                right: -10px;
+            }
             top: -25px;
             right: -25px;
             width: 50px;

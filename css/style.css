@@ -11,7 +11,7 @@ h1, h2, h3, h4, h5, h6 {
 .container {
   position: relative;
   width: 85%;
-  margin: 0 auto; }
+  margin: 2em auto; }
 
 .button {
   border-radius: 32px;
@@ -174,17 +174,80 @@ header {
       @media (max-width: 599px) {
         .slider .slider-controls .right_arrow {
           margin-right: 10px; } }
+  .slider .dot-controls {
+    position: relative; }
+    .slider .dot-controls ul {
+      border: 1px solid #a7a7a7;
+      border-radius: 18px;
+      position: absolute;
+      list-style-type: none;
+      width: 400px;
+      height: 25px;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      padding: 0; }
+      .slider .dot-controls ul li {
+        border-radius: 28px;
+        border: 1px solid #efefef;
+        margin: 0 0.5em;
+        display: inline-block; }
+        .slider .dot-controls ul li a {
+          text-decoration: none; }
+          .slider .dot-controls ul li a.active {
+            background-color: black; }
+          .slider .dot-controls ul li a:visited {
+            color: inherit; }
 
 .courses hr {
   margin: 1.2em 0; }
+
+.courses h3 {
+  color: #a7a7a7; }
 
 .courses .courses_list, .courses .add_course_section {
   display: inline-block;
   width: 100%; }
 
-.courses .add_course_section form input, .courses .add_course_section form textarea, .courses .add_course_section form label {
+.courses .add_course_section form {
+  position: relative; }
+  .courses .add_course_section form label {
+    margin-top: 15px;
+    color: #a7a7a7; }
+    .courses .add_course_section form label:first-child {
+      margin-top: 0; }
+  .courses .add_course_section form input, .courses .add_course_section form textarea, .courses .add_course_section form label {
+    clear: both;
+    float: left; }
+  .courses .add_course_section form .input[type=text], .courses .add_course_section form textarea {
+    background-color: white;
+    border: 2px solid #e5e1e2;
+    padding: 1em 2em; }
+  .courses .add_course_section form .input[text=file]::before {
+    border: 1px solid #e5e1e2;
+    color: #e5e1e2; }
+  .courses .add_course_section form .input[type=submit] {
+    padding: 1em 4em; }
+
+.courses .add_course_section button {
+  cursor: pointer;
+  float: left;
   clear: both;
-  float: left; }
+  width: 25px;
+  height: 25px;
+  box-shadow: 4px 4px 4px black;
+  border-radius: 28px;
+  background-color: transparent;
+  background-image: url(../img/icon_quit.png);
+  background-size: cover; }
+  @media (max-width: 599px) {
+    .courses .add_course_section button {
+      width: 25px;
+      height: 25px;
+      top: -10px;
+      right: -10px; } }
 
 .courses .card {
   box-sizing: border-box;
@@ -312,17 +375,26 @@ footer .footer-copyright {
     width: 800px;
     background-color: white;
     border-radius: 10px; }
+    @media (max-width: 599px) {
+      .modal_block .modal {
+        width: 80%; } }
     .modal_block .modal img {
       border-radius: 10px 10px 0 0;
       width: 100%; }
     .modal_block .modal .login {
       padding: 1em 10em; }
+      @media (max-width: 599px) {
+        .modal_block .modal .login {
+          padding: 1em 1em; } }
     .modal_block .modal .button {
       background-color: #1ea2da;
       margin: 0 6em;
       text-align: center;
       color: white;
       padding: 1em 0; }
+      @media (max-width: 599px) {
+        .modal_block .modal .button {
+          margin: 0 1em; } }
     .modal_block .modal .quit_button {
       position: absolute;
       top: -25px;
@@ -334,3 +406,9 @@ footer .footer-copyright {
       background-color: transparent;
       background-image: url(../img/icon_quit.png);
       background-size: cover; }
+      @media (max-width: 599px) {
+        .modal_block .modal .quit_button {
+          width: 25px;
+          height: 25px;
+          top: -10px;
+          right: -10px; } }

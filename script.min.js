@@ -42,7 +42,6 @@
     });
 
 
-
     //Slider
 
     $arrowLeft.addEventListener('click', function(e){
@@ -77,6 +76,31 @@
         }
     });
 
+    //Dots Selector
+    function generateDotsSelector(){
+        var dotsController = document.querySelectorAll('.dot-controls a');
+        console.log(dotsController);
+        if(dotsController.length > 0){
+            for(var i = 0; i < dotsController.length; i++){
+                dotsController[i].addEventListener('click', function(e){
+                    e.preventDefault();
+                    var index = parseInt(this.getAttribute('data-index'));
+                    var $slides = document.getElementsByClassName('slide');
+                    if($slides[index].classList.contains('active')){
+                        return;
+                    }
+                    for(var i = 0; i < $slides.length; i++ ){
+                        if($slides[i].classList.contains('active')){
+                            $slides[i].classList.remove('active');
+                            break;
+                        }
+                    }
+                    $slides[index].classList.add('active');
+                });
+            }
+        }
+    }
+
     //Load All Courses
 
     var courses;
@@ -91,6 +115,8 @@
                 var data = ajax.responseText;    
                 setMyCourses(data);     
                 setSlider(data);       
+                setDots(data);
+                generateDotsSelector();
             }     
         }
     }
@@ -174,10 +200,30 @@
             
         }
     }
-
+    function setDots(data){
+        var courses = JSON.parse(data);
+        var $dots = document.getElementsByClassName('dot-controls')[0];
+        if(courses.records.length > 1 ){
+            var $ul = document.createElement('ul');
+            for(var i = 0; i < courses.records.length; i++){
+                var $dot = document.createElement('li');
+                var $aLink = document.createElement('a');
+                $aLink.setAttribute('href', '#');
+                $aLink.setAttribute('data-index', i);
+                $aLink.innerHTML = '&#9711';
+                if(i == 0 ){
+                    $aLink.classList.add('active');
+                }
+                $dot.append($aLink);
+                $ul.append($dot);
+            }
+            $dots.append($ul);
+        }
+    }
 
     ///Add Course
     var $addCourseBtn = document.querySelectorAll('.add-course-wapper a')[0];
+    var $closeCourseBtn = document.getElementsByClassName('close_add_form')[0];
     var $courseAddSection = document.getElementsByClassName('add_course_section')[0];
     var $courseListSection = document.getElementsByClassName('courses_list')[0];
 
@@ -187,13 +233,23 @@
         $courseAddSection.style.display = 'inline-block';
     });
 
+    $closeCourseBtn.addEventListener('click', function(e){
+        e.preventDefault();
+        if($courseAddSection.style.display !== 'none' ){
+            $courseAddSection.style.display = 'none';
+        }
+        if($courseListSection.style.display == 'none' ){
+            $courseListSection.style.display = 'inline-block';
+        }
+    });
+
+
     var $formCourse = document.forms.add;
     $formCourse.addEventListener('submit', function(e){
         e.preventDefault();
         var photo = document.querySelector('input[type=file]').files[0];
         var mime_type = ['image/jpeg', 'image/png'];
         if(mime_type.indexOf(photo.type)){
-            console.log("Nao e do tipo")
             return;
         }
         var formData = {
@@ -201,8 +257,7 @@
             "description": $formCourse.elements[1].value,
             "banner": photo
         };
-        console.log(formData);
-        console.log(JSON.stringify(formData));
+     
      
         
         var ajax = new XMLHttpRequest();
@@ -223,7 +278,6 @@
         ajax.onreadystatechange = function(){
             if(ajax.readyState == 4 && ajax.status == 200 ){
                 var data = ajax.responseText;
-                console.log(data);
             } 
         }
     });
